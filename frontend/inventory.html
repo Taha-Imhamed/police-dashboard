@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Police Department Inventory</title>
+  <link rel="stylesheet" href="assets/styles/inventory.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <h1>Police Department Inventory</h1>
+      <button id="back-btn">Back to Dashboard</button>
+    </div>
+    <button onclick="logout()" class="logout-btn">Logout</button>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="inventory-categories">
+      <h2>Inventory Categories</h2>
+      <div class="category-grid">
+        <!-- Rifles -->
+        <div class="category-item" onclick="openCategory('rifles')">
+          <img src="assets/icons/m4.jpg" alt="Rifles">
+          <p>Rifles</p>
+        </div>
+        <!-- Pistols -->
+        <div class="category-item" onclick="openCategory('pistols')">
+          <img src="assets/images/pistol.png" alt="Pistols">
+          <p>Pistols</p>
+        </div>
+        <!-- Ammunition -->
+        <div class="category-item" onclick="openCategory('ammunition')">
+          <img src="assets/images/ammo-removebg-preview.png" alt="Ammunition">
+          <p>Ammunition</p>
+        </div>
+        <!-- Grenades -->
+        <div class="category-item" onclick="openCategory('grenades')">
+          <img src="assets/images/boomb.png" alt="Grenades">
+          <p>Grenades</p>
+        </div>
+        <!-- Vests -->
+        <div class="category-item" onclick="openCategory('vests')">
+          <img src="assets/images/vest.png" alt="Vests">
+          <p>Vests</p>
+        </div>
+        <!-- Night Vision -->
+        <div class="category-item" onclick="openCategory('nightVision')">
+          <img src="assets/images/night.png" alt="Night Vision">
+          <p>Night Vision</p>
+        </div>
+        <!-- Tasers -->
+        <div class="category-item" onclick="openCategory('tasers')">
+          <img src="assets/images/taser.png" alt="Tasers">
+          <p>Tasers</p>
+        </div>
+        <!-- Shields -->
+        <div class="category-item" onclick="openCategory('shields')">
+          <img src="assets/images/shield.png" alt="Shields">
+          <p>Shields</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Item Details Section -->
+    <section id="item-details" class="hidden">
+      <h2 id="item-title">Item Details</h2>
+      <div class="item-info">
+        <img id="item-image" src="" alt="Item Image">
+        <div class="item-data">
+          <p><strong>Name:</strong> <span id="item-name"></span></p>
+          <p><strong>Stock:</strong> <span id="item-stock"></span></p>
+          <p><strong>Description:</strong> <span id="item-description"></span></p>
+          <div class="additional-options">
+            <button onclick="assignToOfficer()">Assign to Officer</button>
+            <button onclick="requestRestock()">Request Restock</button>
+            <button onclick="markAsDamaged()">Mark as Damaged</button>
+          </div>
+          <button onclick="goBack()">Back to Inventory</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 Police Department. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const inventoryData = {
+      rifles: [
+        { name: "M4 Carbine", stock: 50, description: "Standard issue assault rifle.", image: "assets/images/m4.png" },
+        { name: "AK-47", stock: 30, description: "High-power assault rifle.", image: "assets/images/m4.png" }
+      ],
+      pistols: [
+        { name: "Glock 17", stock: 100, description: "Reliable semi-automatic pistol.", image: "assets/images/pistol.png" },
+        { name: "Beretta 92", stock: 75, description: "Classic military-grade pistol.", image: "assets/images/beretta92.png" }
+      ],
+      ammunition: [
+        { name: "5.56mm Rounds", stock: 2000, description: "Standard rifle ammunition.", image: "assets/images/.png" },
+        { name: "9mm Rounds", stock: 3000, description: "Standard pistol ammunition.", image: "assets/images/9mm-ammo.png" }
+      ],
+      grenades: [
+        { name: "Frag Grenade", stock: 50, description: "Explosive fragmentation grenade.", image: "assets/images/boomb.png" },
+        { name: "Smoke Grenade", stock: 100, description: "Non-lethal smoke screen.", image: "assets/images/smoke-grenade.png" }
+      ],
+      vests: [
+        { name: "Ballistic Vest", stock: 80, description: "Level IIIA protection.", image: "assets/images/vest.png" },
+        { name: "Tactical Vest", stock: 60, description: "Customizable tactical gear.", image: "assets/images/tactical-vest.png" }
+      ],
+      nightVision: [
+        { name: "NV Goggles", stock: 25, description: "Night vision goggles.", image: "assets/images/night.png" }
+      ],
+      tasers: [
+        { name: "X26 Taser", stock: 40, description: "Electroshock weapon.", image: "assets/images/x26-taser.png" }
+      ],
+      shields: [
+        { name: "Riot Shield", stock: 30, description: "Transparent ballistic shield.", image: "assets/images/riot-shield.png" }
+      ]
+    };
+
+    function openCategory(category) {
+      const items = inventoryData[category];
+      if (items && items.length > 0) {
+        const item = items[0]; // Show first item in the category
+        document.getElementById("item-title").textContent = item.name;
+        document.getElementById("item-image").src = item.image;
+        document.getElementById("item-name").textContent = item.name;
+        document.getElementById("item-stock").textContent = item.stock;
+        document.getElementById("item-description").textContent = item.description;
+        document.getElementById("item-details").classList.remove("hidden");
+        document.getElementById("item-details").classList.add("visible");
+      }
+    }
+
+    function goBack() {
+      document.getElementById("item-details").classList.remove("visible");
+      document.getElementById("item-details").classList.add("hidden");
+    }
+
+    function logout() {
+      alert("Logging out...");
+    }
+
+    function assignToOfficer() {
+      alert("Item assigned to officer.");
+    }
+
+    function requestRestock() {
+      alert("Restock request sent.");
+    }
+
+    function markAsDamaged() {
+      alert("Item marked as damaged.");
+    }
+  </script>
+</body>
+</html>

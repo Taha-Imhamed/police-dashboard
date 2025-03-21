@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="assets/styles/dashboard.css">
+  <script src="scripts/navigation.js" defer></script>
+</head>
+<body class="light-mode">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <a href="login.html" class="logo">
+      <img src="assets/icons/logo_1.png" alt="Logo">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#" data-content="home" title="Dashboard"><img src="assets/icons/home.png" alt="Home Icon" class="icon"> Home</a></li>
+        <li><a href="#" data-content="announcements" title="View Announcements"><img src="assets/icons/7655679.png" alt="Announcements Icon" class="icon"> Announcements</a></li>
+        <li><a href="#" data-content="patrols" title="Manage Patrols"><img src="assets/icons/patrol.png" alt="Patrols Icon" class="icon"> Patrols</a></li>
+        <li><a href="#" data-content="citizens" title="Citizen Records"><img src="assets/icons/person.png" alt="Citizens Icon" class="icon"> Citizens</a></li>
+        <li><a href="#" data-content="vehicles" title="Vehicle Registry"><img src="assets/icons/car.png" alt="Vehicles Icon" class="icon"> Vehicles</a></li>
+        <li><a href="#" data-content="dispatch" title="Dispatch Center"><img src="assets/icons/call.png" alt="Dispatch Icon" class="icon"> Dispatch</a></li>
+        <li><a href="#" data-content="weapons" title="Weapons Registry"><img src="assets/icons/pistol.png" alt="Weapons Icon" class="icon"> Weapons Registry</a></li>
+        <li><a href="#" data-content="evidence" title="Evidence Locker"><img src="assets/icons/evidence.png" alt="Evidence Icon" class="icon"> Evidence</a></li>
+        <li><a href="#" data-content="cases" title="Case Management"><img src="assets/icons/case.png" alt="Cases Icon" class="icon"> Cases</a></li>
+        <li><a href="#" data-content="k9" title="K9 Unit"><img src="assets/icons/k9.png" alt="K9 Icon" class="icon"> K9</a></li>
+        <li><a href="#" data-content="notes" title="Notes & Logs"><img src="assets/icons/note.png" alt="Notes Icon" class="icon"> Notes</a></li>
+        <li><a href="#" data-content="settings" title="System Settings"><img src="assets/icons/sett.png" alt="Settings Icon" class="icon"> Settings</a></li>
+        <li><a href="#" data-content="inventory" title="Inventory & Armory"><img src="assets/icons/inv.png" alt="Inventory Icon" class="icon"> Inventory & Armory</a></li>
+        <li><a href="#" data-content="garage" title="Garage & Vehicles"><img src="assets/icons/garage.png" alt="Garage Icon" class="icon"> Garage & Vehicles</a></li>
+      </ul>
+    </nav>
+   
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+    <header>
+      <h1 id="page-title">Admin Panel</h1>
+      <div class="header-actions">
+        <button onclick="logout()">Logout</button>
+        <button onclick="toggleNotifications()">🔔 Notifications</button>
+      </div>
+    </header>
+
+    <!-- Notification Dropdown -->
+    <div id="notifications-dropdown" class="hidden">
+      <h3>Recent Notifications</h3>
+      <ul>
+        <li>New case opened: Case #12345</li>
+        <li>Dispatch alert: Officer needs backup</li>
+        <li>System update available</li>
+      </ul>
+    </div>
+
+    <section id="content-area">
+      <!-- Default Home Page Content -->
+      <div id="home-content">
+        <h2>Welcome, TO  Eagle Eye 1.0</h2>
+        <p>Select an option from the sidebar to view its content.</p>
+      </div>
+
+      <!-- Real-Time Data Widgets -->
+      <div id="real-time-widgets" class="hidden">
+        <div class="widget">
+          <i class="icon">📋</i>
+          <h3>Cases Opened</h3>
+          <p id="cases-opened">Loading...</p>
+        </div>
+        <div class="widget">
+          <i class="icon">📞</i>
+          <h3>Calls Received</h3>
+          <p id="calls-received">Loading...</p>
+        </div>
+        <div class="widget">
+          <i class="icon">👮‍♂️</i>
+          <h3>Officers On Duty</h3>
+          <p id="officers-on-duty">Loading...</p>
+        </div>
+        <div class="widget">
+          <i class="icon">🚨</i>
+          <h3>Active Responses</h3>
+          <p id="active-responses">Loading...</p>
+        </div>
+      </div>
+
+      <!-- Quick Search Shortcuts -->
+      <div id="quick-search" class="hidden">
+        <h3>Quick Search</h3>
+        <div class="search-shortcut">
+          <input type="text" id="suspect-search" placeholder="Search Suspect Name">
+          <button onclick="searchSuspect()">🔍</button>
+        </div>
+        <div class="search-shortcut">
+          <input type="text" id="vehicle-search" placeholder="Search Vehicle">
+          <button onclick="searchVehicle()">🔍</button>
+        </div>
+        <div class="search-shortcut">
+          <input type="text" id="weapon-search" placeholder="Search Weapon">
+          <button onclick="searchWeapon()">🔍</button>
+        </div>
+      </div>
+
+      <!-- User Activity Logs -->
+      <div id="activity-logs" class="hidden">
+        <h3>User Activity Logs</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>User</th>
+              <th>Action</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2023-10-01 10:00 AM</td>
+              <td>Admin</td>
+              <td>Logged in</td>
+              <td>Success</td>
+            </tr>
+            <tr>
+              <td>2023-10-01 10:05 AM</td>
+              <td>Officer memo</td>
+              <td>Updated case #12345</td>
+              <td>Success</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- System Health Monitoring -->
+      <div id="system-health" class="hidden">
+        <h3>System Health</h3>
+        <div class="health-widget">
+          <i class="icon">💻</i>
+          <h4>Server Status</h4>
+          <p>Online</p>
+        </div>
+        <div class="health-widget">
+          <i class="icon">🌐</i>
+          <h4>Network Latency</h4>
+          <p>20ms</p>
+        </div>
+        <div class="health-widget">
+          <i class="icon">🔋</i>
+          <h4>Battery Backup</h4>
+          <p>85%</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Example -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Modal Title</h2>
+        <p>This is a modal dialog box. You can display dynamic content here.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function logout() {
+      alert("Logging out...");
+      window.location.href = "login.html";
+    }
+
+    function toggleNotifications() {
+      const dropdown = document.getElementById('notifications-dropdown');
+      dropdown.classList.toggle('hidden');
+    }
+
+    function searchSuspect() {
+      const query = document.getElementById('suspect-search').value;
+      alert(`Searching for suspect: ${query}`);
+    }
+
+    function searchVehicle() {
+      const query = document.getElementById('vehicle-search').value;
+      alert(`Searching for vehicle: ${query}`);
+    }
+
+    function searchWeapon() {
+      const query = document.getElementById('weapon-search').value;
+      alert(`Searching for weapon: ${query}`);
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle('dark-mode');
+      const themeButton = document.getElementById('toggle-theme');
+      if (body.classList.contains('dark-mode')) {
+        themeButton.textContent = '☀️ Light Mode';
+      } else {
+        themeButton.textContent = '🌙 Dark Mode';
+      }
+    }
+
+    function openModal() {
+      const modal = document.getElementById('modal');
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.classList.add('hidden');
+    }
+
+    // Example: Load dynamic content based on sidebar selection
+    document.querySelectorAll('.sidebar a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const contentId = e.target.getAttribute('data-content');
+        document.querySelectorAll('#content-area > div').forEach(div => div.classList.add('hidden'));
+        document.getElementById(`${contentId}-content`)?.classList.remove('hidden');
+      });
+    });
+  </script>
+</body>
+</html>

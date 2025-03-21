@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citizen Record Check</title>
+  <link rel="stylesheet" href="assets/styles/citizen_check.css">
+</head>
+<body>
+  <header>
+    <h1>Citizen Record Check</h1>
+    <button id="back-btn">Back to Dashboard</button>
+  </header>
+  <button onclick="logout()">Logout</button>
+  <main>
+    <section class="citizen-search">
+      <h2>Search Citizen</h2>
+      <form id="citizen-search-form">
+        <label for="citizen-id">Citizen ID or Name:</label>
+        <input type="text" id="citizen-id" name="citizen-id" placeholder="Enter ID or Name" required>
+
+        <button type="submit">Search</button>
+      </form>
+
+      <section id="citizen-details">
+        <h3>Citizen Details</h3>
+        <p id="citizen-name">Name: Loading...</p>
+        <p id="citizen-dob">Date of Birth: Loading...</p>
+        <p id="criminal-record">Criminal Record: Loading...</p>
+      </section>
+    </section>
+  </main>
+  <script src="scripts.js"></script>
+</body>
+</html>

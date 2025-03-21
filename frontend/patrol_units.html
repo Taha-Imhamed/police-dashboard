@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patrol Units</title>
+  <link rel="stylesheet" href="assets/styles/patrol_units.css">
+</head>
+<body>
+  <header>
+    <h1>Patrol Units</h1>
+    <button id="back-btn">Back to Dashboard</button>
+  </header>
+
+  <main>
+    <section class="create-unit">
+      <h2>Create Patrol Unit</h2>
+      <form id="create-unit-form">
+        <label for="unit-name">Unit Name:</label>
+        <input type="text" id="unit-name" name="unit-name" required>
+
+        <button type="submit">Create Unit</button>
+      </form>
+    </section>
+    <button onclick="logout()">Logout</button>
+    <section class="assign-officer">
+      <h2>Assign Officer to Unit</h2>
+      <form id="assign-officer-form">
+        <label for="unit-id">Unit ID:</label>
+        <input type="text" id="unit-id" name="unit-id" required>
+
+        <label for="officer-id">Officer ID:</label>
+        <input type="text" id="officer-id" name="officer-id" required>
+
+        <button type="submit">Assign</button>
+      </form>
+    </section>
+
+    <section class="unit-status">
+      <h2>Patrol Unit Status</h2>
+      <ul id="unit-status-list"></ul>
+    </section>
+  </main>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/patrol_units.js"></script>
+</body>
+</html>

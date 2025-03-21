@@ -1,0 +1,150 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    height: 100%; /* Ensure the body takes up the full height of the viewport */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling if necessary */
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://media.istockphoto.com/id/1599188918/vector/modern-abstract-blue-red-angled-background.jpg?s=612x612&w=0&k=20&c=FJpI321lKcoIygZ76tzNJXUdT2luVshD8rUUimnnaUE=') no-repeat center center fixed;
+    background-size: cover; /* Ensure the image covers the entire viewport */
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #00008B, #030352); /* Dark blue gradient */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Text shadow */
+  }
+  
+  header button {
+    background: linear-gradient(135deg, #00008B, #0000CD); /* Gradient button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effects */
+  }
+  
+  header button:hover {
+    transform: scale(1.05); /* Scale up button on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Glow effect */
+  }
+  
+  /* Main Content */
+  main {
+    flex-grow: 1;
+    padding: 80px 20px 20px; /* Add padding to account for the fixed header */
+    margin-left: 0; /* No sidebar for this page */
+    background: rgba(0, 0, 0, 0.575); /* Semi-transparent overlay for readability */
+    min-height: 100vh; /* Ensure the content covers the full viewport height */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  }
+  
+  .vehicle-search {
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #000033, #00008B); /* Gradient background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+  }
+  
+  .vehicle-search h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ADD8E6; /* Light blue */
+  }
+  
+  .vehicle-search form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .vehicle-search label {
+    font-size: 16px;
+    color: #ADD8E6; /* Light blue */
+  }
+  
+  .vehicle-search input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #000033; /* Dark background for input */
+    color: #fff; /* White text */
+    outline: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .vehicle-search input:focus {
+    transform: scale(1.02); /* Slight scaling effect on focus */
+  }
+  
+  .vehicle-search button {
+    background: linear-gradient(135deg, #00008B, #0000CD); /* Gradient button */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effects */
+  }
+  
+  .vehicle-search button:hover {
+    transform: scale(1.05); /* Scale up button on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Glow effect */
+  }
+  
+  #vehicle-details {
+    margin-top: 20px;
+  }
+  
+  #vehicle-details h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  #vehicle-details p {
+    font-size: 14px;
+    color: #ADD8E6; /* Light blue */
+    margin-bottom: 5px;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

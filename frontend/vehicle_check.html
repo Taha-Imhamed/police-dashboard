@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Check</title>
+  <link rel="stylesheet" href="assets/styles/vehicle_check.css">
+</head>
+<body>
+  <header>
+    <h1>Vehicle Check</h1>
+    <button id="back-btn">Back to Dashboard</button>
+  </header>
+  <button onclick="logout()">Logout</button>
+  <main>
+    <section class="vehicle-search">
+      <h2>Search Vehicle</h2>
+      <form id="vehicle-search-form">
+        <label for="plate-number">Plate Number:</label>
+        <input type="text" id="plate-number" name="plate-number" required>
+
+        <button type="submit">Search</button>
+      </form>
+
+      <section id="vehicle-details">
+        <h3>Vehicle Details</h3>
+        <p id="owner-name">Owner Name: Loading...</p>
+        <p id="color">Color: Loading...</p>
+        <p id="engine">Engine: Loading...</p>
+        <p id="horsepower">Horsepower: Loading...</p>
+        <p id="insurance">Insurance: Loading...</p>
+        <p id="warrants">Warrants: Loading...</p>
+      </section>
+    </section>
+  </main>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/vehicle_check.js"></script>
+</body>
+</html>

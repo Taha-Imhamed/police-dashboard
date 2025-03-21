@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports Management</title>
+  <link rel="stylesheet" href="assets/styles/reports.css">
+</head>
+<body>
+  <header>
+    <h1>Reports Management</h1>
+    <button id="back-btn">Back to Dashboard</button>
+  </header>
+  <button onclick="logout()">Logout</button>
+  <main>
+    <section class="upload-report">
+      <h2>Upload Report</h2>
+      <form id="upload-report-form">
+        <label for="case-id">Case ID:</label>
+        <input type="text" id="case-id" name="case-id" required>
+
+        <label for="report-file">Report File:</label>
+        <input type="file" id="report-file" name="report-file" required>
+
+        <button type="submit">Upload</button>
+      </form>
+    </section>
+
+    <section class="report-list">
+      <h2>Uploaded Reports</h2>
+      <ul id="uploaded-reports"></ul>
+    </section>
+  </main>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/reports.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weapon Check</title>
+  <link rel="stylesheet" href="assets/styles/weapon_check.css">
+</head>
+<body>
+  <header>
+    <h1>Weapon Check</h1>
+    <button id="back-btn">Back to Dashboard</button>
+  </header>
+  <button onclick="logout()">Logout</button>
+  <main>
+    <section class="weapon-search">
+      <h2>Verify Weapon</h2>
+      <form id="weapon-search-form">
+        <label for="serial-number">Serial Number:</label>
+        <input type="text" id="serial-number" name="serial-number" required>
+
+        <button type="submit">Verify</button>
+      </form>
+
+      <section id="weapon-details">
+        <h3>Weapon Details</h3>
+        <p id="weapon-status">Status: Loading...</p>
+        <p id="owner-name">Owner Name: Loading...</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/weapon_check.js"></script>
+</body>
+</html>

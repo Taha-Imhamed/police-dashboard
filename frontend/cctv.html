@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCTV Interface</title>
+  <link rel="stylesheet" href="assets/styles/cctv.css">
+</head>
+<body>
+  <header>
+    <h1>CCTV Interface</h1>
+    <button id="back-btn">Back to Dashboard</button>
+  </header>
+  <button onclick="logout()">Logout</button>
+  <main>
+    <section class="camera-feed">
+      <h2>Live Camera Feed</h2>
+      <video id="live-feed" controls autoplay></video>
+    </section>
+
+    <section class="camera-controls">
+      <h2>Camera Controls</h2>
+      <button id="zoom-in">Zoom In</button>
+      <button id="zoom-out">Zoom Out</button>
+      <button id="pan-left">Pan Left</button>
+      <button id="pan-right">Pan Right</button>
+    </section>
+  </main>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/cctv.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%; /* Ensure the body takes up the full height of the viewport */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto; /* Allow vertical scrolling if necessary */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('https://media.istockphoto.com/id/1599188918/vector/modern-abstract-blue-red-angled-background.jpg?s=612x612&w=0&k=20&c=FJpI321lKcoIygZ76tzNJXUdT2luVshD8rUUimnnaUE=') no-repeat center center fixed;
+  background-size: cover; /* Ensure the image covers the entire viewport */
+  color: #fff;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+}
+
+/* Header Styling */
+header {
+  background: linear-gradient(135deg, #00008B, #030352); /* Dark blue gradient */
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Text shadow */
+}
+
+#back-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #ADD8E6; /* Light blue */
+  color: #00008B;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effects */
+}
+
+#back-btn:hover {
+  transform: scale(1.05); /* Scale up button on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Glow effect */
+}
+
+/* Logout Button */
+button[onclick="logout()"] {
+  background: linear-gradient(135deg, #DC3545, #C82333); /* Red gradient */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 1rem auto;
+  display: block;
+  width: fit-content;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effects */
+}
+
+button[onclick="logout()"]:hover {
+  transform: scale(1.05); /* Scale up button on hover */
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Glow effect */
+}
+
+/* Main Content */
+main {
+  flex-grow: 1;
+  padding: 20px;
+  margin-top: 20px;
+  background: rgba(0, 0, 0, 0.575); /* Semi-transparent overlay for readability */
+  min-height: calc(100vh - 100px); /* Ensure content fills remaining space */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+/* Citizen Search Section */
+.citizen-search {
+  max-width: 600px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #000033, #00008B); /* Gradient background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+.citizen-search h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ADD8E6; /* Light blue */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Text shadow */
+}
+
+/* Form Elements */
+.citizen-search label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #ADD8E6; /* Light blue */
+}
+
+.citizen-search input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background: #000033; /* Dark background for input */
+  color: #fff; /* White text */
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.citizen-search input:focus {
+  background: #00008B; /* Slightly lighter dark blue on focus */
+}
+
+.citizen-search button[type="submit"] {
+  background: linear-gradient(135deg, #00008B, #0000CD); /* Gradient button */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effects */
+}
+
+.citizen-search button[type="submit"]:hover {
+  transform: scale(1.05); /* Scale up button on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Glow effect */
+}
+
+/* Citizen Details Section */
+#citizen-details {
+  margin-top: 20px;
+}
+
+#citizen-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #ADD8E6; /* Light blue */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Text shadow */
+}
+
+#citizen-details p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

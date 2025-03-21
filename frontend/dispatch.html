@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dispatch Interface</title>
+  <link rel="stylesheet" href="assets/styles/dispatch.css">
+</head>
+<body>
+  <header>
+    <h1>Dispatch Interface</h1>
+    <button id="back-btn">Back to Dashboard</button>
+  </header>
+  <button onclick="logout()">Logout</button>
+  <main>
+    <section class="task-form">
+      <h2>Assign Task</h2>
+      <form id="task-form">
+        <label for="officer-id">Officer ID:</label>
+        <input type="text" id="officer-id" name="officer-id" required>
+
+        <label for="task-description">Task Description:</label>
+        <textarea id="task-description" name="task-description" required></textarea>
+
+        <button type="submit">Assign Task</button>
+      </form>
+    </section>
+
+    <section class="task-list">
+      <h2>Pending Tasks</h2>
+      <ul id="pending-tasks"></ul>
+    </section>
+  </main>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/dispatch.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="assets/styles/login.css">
+</head>
+
+<body>
+    <div class="login-form">
+        <h1>Please log in</h1>
+        <form>
+            <label for="email">User ID:</label>
+            <input type="email" id="email" placeholder="UID1265563" required />
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required />
+
+            <div class="g-recaptcha" data-sitekey="6LfrFKQUAAAAAMzFobDZ7ZWy982lDxeps8cd1I2i"></div>
+
+            <button type="button" onclick="checkRecaptcha();" class="btn">Login</button>
+            <button type="button" onclick="goToHome();" class="btn">Login With Test Credentials</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Dashboard. All rights reserved. <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        function checkRecaptcha() {
+            var response = grecaptcha.getResponse();
+            if (response.length == 0) {
+                alert("Please verify reCAPTCHA first");
+            } else if (document.getElementById("email").value == "" || document.getElementById("password").value == "") {
+                alert('Enter valid ID and password');
+            } else {
+                window.open("HomePage.html", "_self");
+            }
+        }
+
+        function goToHome() {
+            window.open("HomePage.html", "_self");
+        }
+    </script>
+</body>
+
+</html>

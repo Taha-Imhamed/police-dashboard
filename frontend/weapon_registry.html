@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weapon Registry System</title>
+  <link rel="stylesheet" href="assets/styles/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header-title">Weapon Registry System</h1>
+      <button id="back-btn" class="btn btn-secondary">Back to Dashboard</button>
+    </div>
+  </header>
+
+  <main class="main container">
+    <section class="weapon-actions">
+      <h2 class="section-title">Weapon Actions</h2>
+      <div class="action-buttons">
+        <button id="register-weapon-btn" class="btn btn-primary">Register a New Weapon</button>
+        <button id="view-weapons-btn" class="btn btn-primary">View Registered Weapons</button>
+      </div>
+    </section>
+
+    <!-- Register Weapon Form -->
+    <section id="register-weapon-form-section" class="hidden">
+      <h2 class="section-title">Register a New Weapon</h2>
+      <form id="register-weapon-form" class="form">
+        <div class="form-group">
+          <label for="citizen-id">Citizen ID:</label>
+          <input type="text" id="citizen-id" name="citizen-id" placeholder="Enter Citizen ID" required>
+        </div>
+
+        <div class="form-group">
+          <label for="citizen-name">Citizen Name:</label>
+          <input type="text" id="citizen-name" name="citizen-name" placeholder="Enter Citizen Name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="weapon-type">Weapon Type:</label>
+          <select id="weapon-type" name="weapon-type" required>
+            <option value="">-- Select Weapon Type --</option>
+            <option value="Handgun">Handgun</option>
+            <option value="Rifle">Rifle</option>
+            <option value="Shotgun">Shotgun</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="serial-number">Serial Number:</label>
+          <input type="text" id="serial-number" name="serial-number" placeholder="Enter Serial Number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="purchase-date">Purchase Date:</label>
+          <input type="date" id="purchase-date" name="purchase-date" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Register Weapon</button>
+      </form>
+    </section>
+
+    <!-- View Weapons Section -->
+    <section id="view-weapons-section" class="hidden">
+      <h2 class="section-title">Registered Weapons</h2>
+      <table id="weapons-table" class="table">
+        <thead>
+          <tr>
+            <th>Citizen ID</th>
+            <th>Citizen Name</th>
+            <th>Weapon Type</th>
+            <th>Serial Number</th>
+            <th>Purchase Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dynamic rows will be added here -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 Weapon Registry System. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="scripts_wepons.js"></script>
+</body>
+</html>

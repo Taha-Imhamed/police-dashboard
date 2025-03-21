@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Officer Profile</title>
+  <link rel="stylesheet" href="assets/styles/officer_profile.css">
+</head>
+<body>
+  <header>
+    <h1>Officer Profile</h1>
+    <button id="back-btn">Back to Dashboard</button>
+  </header>
+  <button onclick="logout()">Logout</button>
+  <main>
+    <section id="profile-details">
+      <h2>Profile Information</h2>
+      <p><strong>Name:</strong> <span id="officer-name">Loading...</span></p>
+      <p><strong>Rank:</strong> <span id="officer-rank">Loading...</span></p>
+      <p><strong>Status:</strong> <span id="officer-status">Loading...</span></p>
+    </section>
+  </main>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/officer_profile.js"></script>
+</body>
+</html>

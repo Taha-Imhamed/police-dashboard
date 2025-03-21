@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Management</title>
+  <link rel="stylesheet" href="assets/styles/case_management.css">
+</head>
+<body>
+  <header>
+    <h1>Case Management</h1>
+    <button id="back-btn">Back to Dashboard</button>
+  </header>
+  <button onclick="logout()">Logout</button>
+  <main>
+    <section class="case-form">
+      <h2>Create Case</h2>
+      <form id="case-form">
+        <label for="case-title">Title:</label>
+        <input type="text" id="case-title" name="case-title" required>
+
+        <label for="case-description">Description:</label>
+        <textarea id="case-description" name="case-description" required></textarea>
+
+        <button type="submit">Create Case</button>
+      </form>
+    </section>
+
+    <section class="case-list">
+      <h2>Active Cases</h2>
+      <ul id="active-cases"></ul>
+    </section>
+  </main>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/case_management.js"></script>
+</body>
+</html>
